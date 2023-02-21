@@ -1,0 +1,30 @@
+PROCEDURE sort(VAR tab: ARRAY_OF INTEGER , n : INTEGER)
+VAR
+    i,j,sum : INTEGER ;
+BEGIN
+    Read(tab[0])
+    FOR i FROM 1 TO n STEP step  DO
+        Read(tab[i])
+        sum := tab[i]
+        j := i-1
+        WHILE (tab[j]>= sum and j ! 0) DO
+            tab[j] := tab[j+1]
+            j = j-1
+        END_WHILE
+        tab[j]:=sum
+    END_FOR
+END
+ALGORITHM insertion
+VAR
+    sort : PROCEDURE ;
+    i,n : INTEGER;
+    cards : ARRAY_OF INTEGER[50];
+BEGIN
+    REPEAT
+        Read(n)
+    UNTIL (5=<n=<50)
+    sort(cards,n)
+    FOR i FROM 0 TO cards.length-1 STEP   DO
+        write(tab[i])
+    END_FOR
+END
