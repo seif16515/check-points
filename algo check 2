@@ -1,0 +1,26 @@
+ALGORITHM arrays
+VAR
+   tab1 : ARRAY_OF INTEGER[5];  
+   tab2 : ARRAY_OF INTEGER[5]; 
+   i,k : INTEGER; 
+   sum : INTEGER :=0;
+   sum1 : string :="";
+   b : boolean :=true;
+BEGIN 
+ FOR i FROM 0 TO 4 step  DO 
+  Read(tab1[i])
+  Read(tab2[i])
+ END FOR
+ FOR i FROM 0 TO 4 step  DO 
+  k := 0
+  WHILE (b=true and k =< 4 ) DO
+    IF (tab1[i]=tab2[k]) THEN
+     sum := sum + tab1[i] 
+     b := false
+     sum1 := sum1 + str(tab1[i])
+    END IF
+    k:= k +1
+  END WHILE
+ END FOR 
+ Write("the numbers are",sum1,"and the sum is ",sum)
+END

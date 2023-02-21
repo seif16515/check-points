@@ -1,0 +1,23 @@
+ALGORITHM string
+VAR
+    chaine1 : string;
+    i,k: INTEGER;
+    sum : INTEGER :=0;
+    sum1 : INTEGER :=0;
+BEGIN
+ REPEAT
+     Read(chaine1);
+ UNTIL ( chaine1[chaine1.length()-1] =".")
+ k :=chaine1.length()   
+ FOR i FROM 1 TO k-1 step  DO 
+  IF (chaine1[i]=" ") THEN
+   sum := sum+1;
+  END IF
+ END FOR
+ FOR i FROM 0 TO k-1 step  DO 
+  IF (chaine1[i]="e" or chaine1[i]="i" or chaine1[i]="o" or chaine1[i]="u" or chaine1[i]="y") THEN
+   sum1 := sum1+1;
+  END IF
+ END FOR 
+ Write("the number of words",sum,"the nomber of vowels:",sum1)
+END
